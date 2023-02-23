@@ -37,6 +37,8 @@ app.listen(PORT, () => {
   appDataSource.initialize()
     .then(() => {
       console.log("DB Connection has been initialized")
+    }).catch(() => {                                    // initialize().then() 밑의 41번 line에 추가
+      console.log("DB Connection has been failed")
     })
 
   console.log(`Listening to request on localhost:${PORT}`);
